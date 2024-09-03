@@ -5,6 +5,4 @@
 
 texto = str(input("Digite uma palavra para invertê-la: "))
 
-texto_invertido = texto[::-1]
-
-print(texto_invertido)
+print(texto[::-1])
