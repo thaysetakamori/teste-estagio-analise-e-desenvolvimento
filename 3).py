@@ -17,14 +17,14 @@ def calcular_faturamento(dados):
     faturamento_diario = [dia['valor'] for dia in dados if dia['valor'] > 0]
     menor_faturamento = min(faturamento_diario)
     maior_faturamento = max(faturamento_diario)
-    media_mensal = sum(faturamento_diario) / len(faturamento_diario)
+    media_mensal = sum(faturamento_diario) / len([dia for dia in dados])
     dias_acima_da_media = len([dia for dia in faturamento_diario if dia > media_mensal])
     return menor_faturamento, maior_faturamento, dias_acima_da_media
 
-arquivo = 'faturamento.json'
+arquivo = 'dados.json'
 
-faturamento_dados = load_json(arquivo)
-menor, maior, dias_acima_media = calcular_faturamento(faturamento_dados)
+dados_faturamento = load_json(arquivo)
+menor, maior, dias_acima_media = calcular_faturamento(dados_faturamento)
 
 print("Menor valor de faturamento ocorrido em um dia do mês: R$", menor)
 print("Maior valor de faturamento ocorrido em um dia do mês: R$", maior)
