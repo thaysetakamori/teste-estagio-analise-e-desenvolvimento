@@ -2,10 +2,10 @@
 # IMPORTANTE: Esse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código;
 
 def fibonacci(x):
-    a,b = 0, 1
-    while b < x:
+    a, b = 0, 1
+    while a < x:
         a, b = b, a + b
-    return b == x
+    return a == x
 
 num = int(input("Digite um número: "))
 
